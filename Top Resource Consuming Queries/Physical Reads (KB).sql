@@ -1,3 +1,8 @@
+DECLARE @results_row_count int,@interval_start_time datetimeoffset(7),@interval_end_time datetimeoffset(7);
+SET @results_row_count = 25;
+SET @interval_start_time = DATEADD(hour, -1, CURRENT_TIMESTAMP);
+SET @interval_end_time = CURRENT_TIMESTAMP;
+
 SELECT TOP (@results_row_count)
     p.query_id query_id,
     q.object_id object_id,
